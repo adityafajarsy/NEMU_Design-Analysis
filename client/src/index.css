@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-editorial: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  
+  --color-brand-blue: #0789D8;
+  --color-brand-blue-deep: #0878B8;
+  --color-brand-blue-bright: #18B7F2;
+  --color-accent-lime: #C8FF3D;
+  --color-accent-lime-soft: #DFFF78;
+  
+  --color-surface: #F7F8F8;
+  --color-surface-muted: #EEF1F2;
+  --color-ink: #111111;
+  --color-ink-soft: #3E4346;
+  --color-muted: #7C8387;
+  --color-border: #DDE2E4;
+  --color-border-strong: #B9C0C4;
+  --color-dark-surface: #111111;
+  
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  
+  --shadow-card: 0 8px 30px rgba(15, 25, 30, 0.08);
+  --shadow-floating: 0 16px 45px rgba(15, 25, 30, 0.12);
+  --shadow-glow-lime: 0 0 35px rgba(200, 255, 61, 0.35);
+  --shadow-hero: 0 24px 70px -15px rgba(3, 85, 135, 0.35);
+}
+
+:root {
+  --color-brand-blue: #0789D8;
+  --color-brand-blue-deep: #0878B8;
+  --color-brand-blue-bright: #18B7F2;
+  --color-accent-lime: #C8FF3D;
+  --color-accent-lime-soft: #DFFF78;
+  --color-surface: #F7F8F8;
+  --color-surface-muted: #EEF1F2;
+  --color-ink: #111111;
+  --color-ink-soft: #3E4346;
+  --color-muted: #7C8387;
+  --color-border: #DDE2E4;
+  --color-border-strong: #B9C0C4;
+  --color-dark-surface: #111111;
+}
+
+/* Custom smooth scroll and scrollbar */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F8F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDE2E4;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B9C0C4;
+}
+
+/* Atmospheric cloud background for Hero */
+.hero-clouds-bg {
+  background-color: #0789D8;
+  background-image: url('/hero-img.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Handwritten annotation font styling */
+.font-handwritten {
+  font-family: 'Caveat', cursive, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
