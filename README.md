@@ -51,52 +51,6 @@ Untuk mempermudah eksplorasi variasi desain, sistem merumuskan prompt terstruktu
 
 ---
 
-## Arsitektur Sistem
-
-`	ext
-+-------------------------------------------------------------+
-|                      USER INTERACTION                       |
-|        Upload Referensi (Poster / Foto / Antarmuka UI)      |
-+-------------------------------------------------------------+
-                              |
-                              v
-+-------------------------------------------------------------+
-|                      CLIENT FRONTEND                        |
-|  - React 19 + Vite (Modern Component Architecture)          |
-|  - Tailwind CSS v4 (Design System Tokens)                   |
-|  - High-Res Canvas Rendering (html-to-image)                |
-|  - Auth & Session State Management (Clerk & Local Session)  |
-+-------------------------------------------------------------+
-                              |
-                              | HTTP Multipart / REST API
-                              v
-+-------------------------------------------------------------+
-|                     CORE BACKEND GATEWAY                    |
-|  - Node.js & Express REST API                               |
-|  - Rate Limiting, Helmet, & CORS Security                   |
-|  - Multer In-Memory Buffer Processing                       |
-+-------------------------------------------------------------+
-          |                                       |
-          v                                       v
-+--------------------+                 +----------------------+
-|  IMAGE PIPELINE    |                 |   AI VISION ENGINE   |
-| - Cloudinary CDN   |                 | - Multimodal LLM     |
-| - Jimp / Vibrant   |                 | - Structured Schema  |
-| - Raster Sampling  |                 | - Style & Typo Rules |
-+--------------------+                 +----------------------+
-          \                                       /
-           \                                     /
-            v                                   v
-+-------------------------------------------------------------+
-|                     AGGREGATION & STORAGE                   |
-|  - Ekstraksi Palet Swatch & Skor Kontras WCAG               |
-|  - Sintesis Metadata Visual DNA                             |
-|  - Penyimpanan Sesi & Kuota Pengguna (MongoDB Atlas)        |
-+-------------------------------------------------------------+
-`
-
----
-
 ## Tech Stack
 
 ### Frontend
@@ -110,60 +64,10 @@ Untuk mempermudah eksplorasi variasi desain, sistem merumuskan prompt terstruktu
 * **Runtime**: Node.js & Express.js
 * **Database**: MongoDB & Mongoose ODM
 * **Penyimpanan Media**: Cloudinary SDK
-* **Computer Vision**: Jimp, Node-Vibrant
 * **Inference AI**: OpenRouter Multimodal Vision API
 * **Keamanan**: Helmet, Express Rate Limit, JWT
 
 ---
-
-## Struktur Repositori
-
-`	ext
-NEMU_Design-Analysis/
-|-- client/               # Source code antarmuka pengguna (React 19 + Vite + Tailwind CSS)
-|   |-- src/
-|   |   |-- assets/       # Aset visual, banner produk, dan ilustrasi
-|   |   |-- components/   # Komponen UI modular (Inspector, Palette, Modal, dll)
-|   |   |-- services/     # API consumer dan abstraksi integrasi backend
-|   |   -- App.jsx       # Entri utama aplikasi frontend
-|   |-- .env.example      # Template konfigurasi environment frontend
-|   -- package.json      # Dependensi dan skrip frontend
-|-- server/               # Ringkasan arsitektur dan dokumentasi backend
-|   |-- README.md         # Dokumentasi teknis alur backend, kontrak API, dan notice
-|   -- package.json      # Spesifikasi pustaka backend yang digunakan
-|-- .gitignore            # Pengaturan pencegahan kebocoran berkas sensitif
-|-- package.json          # Root orchestration scripts
--- README.md             # Dokumentasi utama showcase produk
-`
-
----
-
-## Menjalankan Antarmuka Frontend Secara Lokal
-
-Bagi yang ingin meninjau atau mengembangkan antarmuka klien secara lokal:
-
-1. **Clone repository**:
-   `ash
-   git clone https://github.com/adityafajarsy/NEMU_Design-Analysis.git
-   cd NEMU_Design-Analysis/client
-   `
-
-2. **Pasang dependensi**:
-   `ash
-   npm install
-   `
-
-3. **Atur environment**:
-   Salin .env.example menjadi .env:
-   `ash
-   cp .env.example .env
-   `
-   Isi VITE_CLERK_PUBLISHABLE_KEY dengan kunci Clerk Anda, atau arahkan VITE_API_URL ke server lokal atau cloud.
-
-4. **Jalankan development server**:
-   `ash
-   npm run dev
-   `
 
 ---
 
